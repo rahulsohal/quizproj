@@ -6,11 +6,6 @@ const User = require("../models/User");
 const Question = require("../models/Question");
 //admin part
 
-//adminlogin
-router.get('/adminlogin', function(req, res, next){
-
-});
-
 router.post('/adminlogin', function(req, res, next){
 	const email = req.body.email;
 	const password = req.body.password;
@@ -25,15 +20,6 @@ router.post('/adminlogin', function(req, res, next){
 			return res.json({success:true, msg: 'Successfully Loggd in'});
 	});
 
-});
-
-//get adminhome
-router.get('/adminhome', function(req, res, next){
-
-});
-
-//get add question form
-router.get('/addquestion', function(req, res, next){
 });
 
 //submit the data to add question
@@ -77,23 +63,23 @@ router.get('/questions', function(req, res, next){
 	})
 });
 
-//get timer set page
-router.get('/settimer', function(req, res, next){
+// //get timer set page
+// router.get('/settimer', function(req, res, next){
 
-});
+// });
 
-//set the quiz timer 
-router.post('/settimer', function(req, res, next){
+// //set the quiz timer 
+// router.post('/settimer', function(req, res, next){
 
-});
+// });
 
 
 //user part
 
-//get register form
-router.get('/register', function(req,res,next){
+// //get register form
+// router.get('/register', function(req,res,next){
 
-});
+// });
 
 router.post('/register', function(req,res,next){
 	let newUser = new User({
