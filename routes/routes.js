@@ -76,7 +76,7 @@ router.get('/questions', function(req, res, next){
 
 //user part
 
-// //get register form
+//get register form
 // router.get('/register', function(req,res,next){
 
 // });

@@ -194,7 +194,7 @@ var AdminauthService = (function () {
     AdminauthService.prototype.authenticateAdmin = function (admin) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('/adminlogin', admin, { headers: headers })
+        return this.http.post('http://localhost:3000/api/adminlogin', admin, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     AdminauthService = __decorate([
@@ -270,10 +270,10 @@ var AdminloginComponent = (function () {
         this.admauthService.authenticateAdmin(admin).subscribe(function (data) {
             if (data.success) {
                 console.log(data);
-                _this.router.navigate(['admindashboard']);
+                _this.router.navigate(['/admindashboard']);
             }
             else {
-                _this.router.navigate(['adminlogin']);
+                _this.router.navigate(['/adminlogin']);
             }
         });
     };
@@ -468,13 +468,13 @@ var AuthService = (function () {
     AuthService.prototype.registerUser = function (user) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('/register', user, { headers: headers })
+        return this.http.post('http://localhost:3000/api/register', user, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.authenticateUser = function (user) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('/login', user, { headers: headers })
+        return this.http.post('http://localhost:3000/api/login', user, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     AuthService = __decorate([
@@ -570,7 +570,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n\t<div class=\"row\">\n\t\t<div class=\"col-sm-6\">\n\t\t\t<a class=\"btn btn-warning\" href=\"/adminlogin\">Admin</a>\t\t\n\t\t</div>\n\t\t<div class=\"col-sm-6\">\n\t\t\t<a class=\"btn btn-primary\" href=\"/login\">User</a>\n\t\t</div>\n\t</div>"
+module.exports = "\n\t<div class=\"row\">\n\t\t<div class=\"col-sm-6\">\n\t\t\t<a [routerLink]=\"['/adminlogin']\">Admin</a>\t\t\n\t\t</div>\n\t\t<div class=\"col-sm-6\">\n\t\t\t<a [routerLink]=\"['/login']\">User</a>\n\t\t</div>\n\t</div>"
 
 /***/ }),
 
@@ -618,7 +618,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".row{\r\n\tmargin-top: 120px;\r\n\tmargin-left: 100px;\r\n}\r\na{\r\n\t-webkit-text-decoration-line: none;\r\n\t        text-decoration-line: none;\r\n\tfont-size: 26px;\r\n}", ""]);
+exports.push([module.i, ".row{\r\n\tmargin-top: 120px;\r\n\tmargin-left: 100px;\r\n}\r\n", ""]);
 
 // exports
 
@@ -631,7 +631,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "    <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n            <div class=\"panel panel-success\">\n                <div class=\"panel-heading\">User Login</div>\n                <div class=\"panel-body\">\n                    <form (submit)=\"onLoginSubmit()\">\n\n                        <div class=\"form-group\">\n                            <label for=\"email\" class=\"col-md-4 control-label\">E-Mail Address</label>\n\n                            \n                                <input type=\"email\" class=\"form-control\" [(ngModel)]=\"email\" name=\"email\" value=\"\" required autofocus>\n\n                            \n                        </div>\n\n                        <div class=\"form-group\">\n                            <label for=\"password\" class=\"col-md-4 control-label\">Password</label>\n\n                            \n                                <input type=\"password\" class=\"form-control\" [(ngModel)]=\"password\" name=\"password\" required>\n\n                            \n                        </div>\n\n                        <div class=\"form-group\">\n                            <div class=\"col-md-8 col-md-offset-4\">\n                                <button type=\"submit\" class=\"btn btn-success\">\n                                    Login\n                                </button>\n\n                            </div>\n                        </div>\n                    </form>\n                </div>\n            </div>\n        </div>\n    </div>"
+module.exports = "    <div class=\"row\">\n        <div class=\"col-md-8 col-md-offset-2\">\n            <div class=\"panel panel-success\">\n                <div class=\"panel-heading\">User Login</div>\n                <div class=\"panel-body\">\n                    <form (submit)=\"onLoginSubmit()\">\n\n                        <div class=\"form-group\">\n                            <label for=\"email\" class=\"col-md-4 control-label\">E-Mail Address</label>\n\n                            \n                                <input type=\"email\" class=\"form-control\" [(ngModel)]=\"email\" name=\"email\" value=\"\" required autofocus>\n\n                            \n                        </div>\n\n                        <div class=\"form-group\">\n                            <label for=\"password\" class=\"col-md-4 control-label\">Password</label>\n\n                            \n                                <input type=\"password\" class=\"form-control\" [(ngModel)]=\"password\" name=\"password\" required>\n\n                            \n                        </div>\n\n                        <div class=\"form-group\">\n                            <div class=\"col-md-8 col-md-offset-4\">\n                                <button type=\"submit\" class=\"btn btn-success\">\n                                    Login\n                                </button>\n\n                                <button class=\"btn btn-success\">\n                                    <a [routerLink]=\"['/register']\">Register</a>\n                                </button>\n\n                            </div>\n                        </div>\n\n                    </form>\n                </div>\n            </div>\n        </div>\n    </div>"
 
 /***/ }),
 
@@ -675,6 +675,7 @@ var LoginComponent = (function () {
                 _this.router.navigate(['dashboard']);
             }
             else {
+                console.log(data);
                 _this.router.navigate(['login']);
             }
         });
@@ -783,16 +784,16 @@ var QuestionService = (function () {
     }
     //retreiving quiz
     QuestionService.prototype.getquestion = function () {
-        return this.http.get('api/questions').map(function (res) { return res.json(); });
+        return this.http.get('http://localhost:3000/api/questions').map(function (res) { return res.json(); });
     };
     //add question
     QuestionService.prototype.addquestion = function (question) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('/addquestion', question, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post('http://localhost:3000/api/addquestion', question, { headers: headers }).map(function (res) { return res.json(); });
     };
     QuestionService.prototype.deleteQuestion = function (id) {
-        return this.http.delete('/deletequestion/' + id).map(function (res) { return res.json(); });
+        return this.http.delete('http://localhost:3000/api/deletequestion/' + id).map(function (res) { return res.json(); });
     };
     QuestionService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
