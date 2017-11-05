@@ -5,17 +5,14 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "build": "grunt dist",
-    "postinstall": "./node_modules/bower/bin/bower install && npm run build"
+    "postinstall": "ng build --aot -prod"
   },
   "author": "Rahul Sohal",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
-    "bower": "^1.8.2",
     "cors": "^2.8.4",
     "express": "^4.16.2",
-    "grunt": "^1.0.1",
     "mongoose": "^4.13.0"
   }
 }
