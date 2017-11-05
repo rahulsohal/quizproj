@@ -194,7 +194,7 @@ var AdminauthService = (function () {
     AdminauthService.prototype.authenticateAdmin = function (admin) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('adminlogin', admin, { headers: headers })
+        return this.http.post('/adminlogin', admin, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     AdminauthService = __decorate([
@@ -468,13 +468,13 @@ var AuthService = (function () {
     AuthService.prototype.registerUser = function (user) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('api/register', user, { headers: headers })
+        return this.http.post('/register', user, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.authenticateUser = function (user) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('api/login', user, { headers: headers })
+        return this.http.post('/login', user, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     AuthService = __decorate([
@@ -789,10 +789,10 @@ var QuestionService = (function () {
     QuestionService.prototype.addquestion = function (question) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('api/addquestion', question, { headers: headers }).map(function (res) { return res.json(); });
+        return this.http.post('/addquestion', question, { headers: headers }).map(function (res) { return res.json(); });
     };
     QuestionService.prototype.deleteQuestion = function (id) {
-        return this.http.delete('api/deletequestion/' + id).map(function (res) { return res.json(); });
+        return this.http.delete('/deletequestion/' + id).map(function (res) { return res.json(); });
     };
     QuestionService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
