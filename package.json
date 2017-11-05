@@ -4,7 +4,7 @@
   "description": "Basic application to for quiz with admin panel and user",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "node app.js"
   },
   "author": "Rahul Sohal",
   "license": "ISC",
