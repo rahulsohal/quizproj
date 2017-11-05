@@ -4,8 +4,7 @@
   "description": "Basic application to for quiz with admin panel and user",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "postinstall": "ng build --aot -prod"
+    "start": "node app.js"
   },
   "author": "Rahul Sohal",
   "license": "ISC",
@@ -13,6 +12,7 @@
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
     "express": "^4.16.2",
-    "mongoose": "^4.13.0"
+    "mongoose": "^4.13.0",
+    "@angular/cli": "^1.2.3"
   }
 }
