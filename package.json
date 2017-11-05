@@ -5,7 +5,6 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "postinstall": "ng build --aot -prod"
   },
   "author": "Rahul Sohal",
   "license": "ISC",
