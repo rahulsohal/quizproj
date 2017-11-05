@@ -12,7 +12,7 @@ var app = express();
 const route = require('./routes/routes');
 
 //Connection to mongoDB 
-mongoose.connect('mongodb://rsohal:quiz2017@ds149335.mlab.com:49335/quizdata');
+mongoose.connect('mongodb://rsohal:quiz2017@localhost:27017/quizdata');
 //mongodb://<dbuser>:<dbpassword>@ds149335.mlab.com:49335/quizdata
 
 //on connection
