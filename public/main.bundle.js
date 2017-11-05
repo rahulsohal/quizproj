@@ -127,7 +127,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/admdashboard/admdashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n\t<div class=\"col-sm-3\">\n\t\t<a href=\"/questions\">View All Questions</a>\n\t</div>\n\t<div class=\"col-sm-3\">\n\t\t<a href=\"/addquestion\">Add Question</a>\n\t</div>\n</div>\n"
+module.exports = "<div class=\"row\">\n\t<div class=\"col-sm-3\">\n\t\t<a [routerLink]=\"['/questions']\">View All Questions</a>\n\t</div>\n\t<div class=\"col-sm-3\">\n\t\t<a [routerLink]=\"['/addquestion']\">Add Question</a>\n\t</div>\n</div>\n"
 
 /***/ }),
 
@@ -509,7 +509,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n\t<div class=\"col-sm-6\">\n\t\t<a class=\"btn btn-primary\" href=\"/test\">Take Test</a>\n\t</div>\n</div>"
+module.exports = "<div class=\"row\">\n\t<div class=\"col-sm-6\">\n\t\t<a [routerLink]=\"['/test']\">Take Test</a>\n\t</div>\n</div>"
 
 /***/ }),
 
